@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/index.css">
+  <title>Todo List</title>
+</head>
+<body>
+  <header>
+    <h1 class="title">Stuff I need to do</h1>
+  </header>
+
+
+  <main>
+    <div class="all-tasks">
+      <h2>My Lists</h2>
+      <ul>
+        <li>Youtube</li>
+        <li>Work</li>
+        <li>Grocery</li>
+      </ul>
+  
+      <form action="">
+        <input type="text"
+        class="new list"
+        placeholder="new list name"
+        aria-label="new list name"
+        />
+  
+        <button class="btn list" aria-label=" create new list">+</button>
+      </form>
+    </div>
+  
+    <div class="todo-list">
+      <div class="todo-header">
+          <h2 class="todo-title">Youtube</h2>
+          <p>3 task remaining</p>
+      </div>
+  
+      <div class="todo-body">
+          <div class="tasks">
+            <div class="task">
+              <input type="checkbox" 
+              id="task-1"
+              />
+              <label for="task-1">
+                record todo list video
+              </label>
+            </div>
+            <div class="task">
+              <input type="checkbox" 
+              id="task-2"
+              />
+              <label for="task-2">
+                edit todo list video
+              </label>
+            </div>
+            <div class="task">
+              <input type="checkbox" 
+              id="task-3"
+              />
+              <label for="task-3">
+                publish todo list video
+              </label>
+            </div>
+          </div>
+  
+  
+          <div class="new-task-creator">
+              <input type="text"
+              class="new task"
+              placeholder="create a new task"
+              aria-label="create a new task"
+              />
+              <button>+</button>
+          </div>
+  
+          <div class="delete-stuff">
+            <button>Clear completed tasks</button>
+            <button>Delete List</button>
+          </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p></p>
+  </footer>
+  
+</body>
+<script src="index.js"></script>
+</html>

@@ -1,0 +1,56 @@
+@import "./normalize",
+        "./variable";
+
+*,
+*::after,
+*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body{
+  background: $my_favor_color_complement;
+  display: flex;
+  flex-direction: column;
+}
+
+header{
+  text-align: center;
+  color: $title_color;
+  font-weight: 900;
+  font-size: 2.3rem;
+
+  h1{
+    padding: 0;
+    margin: 0;
+    letter-spacing: 5px;
+    text-decoration: underline;
+  }
+}
+
+
+
+
+
+main{
+  flex: 1 0 auto;
+}
+
+
+
+
+footer{
+  height:2rem;
+  background: white;
+  color:black;
+  flex-shrink: 0;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+}
