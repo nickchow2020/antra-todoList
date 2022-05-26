@@ -39,7 +39,6 @@ add_task_form.addEventListener("submit", (e) =>{
   add_task_input.value = ""
   data_API.push(data)
   myList.push(data)
-  console.log(myList)
   save()
   renderList(data)
 })
@@ -47,13 +46,12 @@ add_task_form.addEventListener("submit", (e) =>{
 
 delete_task_btn.addEventListener("click", e => {
   const newData = data_API.filter(data => data.id !== +selectedListId)
+
   myList = myList.filter(data => data.id !== +selectedListId)
 
-  data_API = [...newData, ...myList]
+  data_API = [...new Set([...newData,...myList])]
   
   selectedListId = null
-
-  display_data_list.innerHTML = ""
 
   save()
   render()
