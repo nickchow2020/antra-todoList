@@ -88,6 +88,10 @@ function displayDetail(data){
   const header = document.createElement("div")
   const title = document.createElement("h3")
   const status = document.createElement("span")
+  const checkbox_div = document.createElement("div")
+
+  checkbox_div.classList.add("detail_checkbox")
+
   header.classList.add("detail_header")
   title.classList.add("detail_title")
   status.classList.add(data.completed ? "complete_status" : "in_complete_status")
@@ -96,6 +100,23 @@ function displayDetail(data){
   header.appendChild(title)
   header.appendChild(status)
   detail_display_wrapper.appendChild(header)
+  detail_display_wrapper.appendChild(checkbox_div)
+
+
+
+  data.task.forEach( val  => {
+    const detail_list_div = document.createElement("div")
+    const label = document.createElement("label")
+    label.setAttribute("for", `${data.id}`)
+
+    label.classList.add(data.completed ? "complete" : null)
+
+    detail_list_div.classList.add("detail_list")
+    label.innerText = val;
+    detail_list_div.appendChild(label)
+
+    checkbox_div.appendChild(detail_list_div)
+  })
 
 
   // const displayTemplate = 
@@ -179,9 +200,10 @@ getJSON("https://jsonplaceholder.typicode.com/todos")
 .then(data => {
   clearElements(display_data_list)
   const addTask = data.map(data => {
+
     return {
       ...data,
-      task:[]
+      task:[data.title, `${data.title}Good`]
     }
   })
 
