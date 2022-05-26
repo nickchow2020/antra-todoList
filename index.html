@@ -12,81 +12,74 @@
     <h1 class="title">Stuff I need to do</h1>
   </header>
 
-
   <main>
-    <div class="all-tasks">
-      <h2>My Lists</h2>
-      <ul>
-        <li>Youtube</li>
-        <li>Work</li>
-        <li>Grocery</li>
-      </ul>
-  
-      <form action="">
+    <div class="task">
+      <h2>My Tasks:</h2>
+      <div class="task_display">
+        <ul class="task_list">
+          <li class="active">Youtube</li>
+          <li>Shopping</li>
+          <li>Shopping</li>
+          <li>Shopping</li>
+        </ul>
+      </div>
+      <form action="" class="task_add_form">
+        <button class="task_btn">+</button>
         <input type="text"
-        class="new list"
-        placeholder="new list name"
-        aria-label="new list name"
-        />
-  
-        <button class="btn list" aria-label=" create new list">+</button>
+          placeholder="add new task"
+          class="task_input"
+        >
       </form>
     </div>
-  
-    <div class="todo-list">
-      <div class="todo-header">
-          <h2 class="todo-title">Youtube</h2>
-          <p>3 task remaining</p>
+
+    <div class="detail">
+      <div class="detail_wrapper">
+        <div class="detail_header">
+          <h3 class="detail_title">Task Name: </h3>
+          <span>remaining tasks :2</span>
+        </div>
+
+        <div class="detail_checkbox">
+          <div class="detail_list">
+            <label for="detail_list_1" class="complete">
+              <input type="checkbox" id="detail_list_1">
+              Lorem ipsum dolor sit amet consectetur adipisicing.
+            </label>
+          </div>
+
+          <div class="detail_list">
+            <label for="detail_list_2">
+              <input type="checkbox" id="detail_list_2">
+              Lorem ipsum dolor sit amet consectetur adipisicing.
+            </label>
+          </div>
+
+          <div class="detail_list">
+            <label for="detail_list_3">
+              <input type="checkbox" id="detail_list_3">
+              Lorem ipsum dolor sit amet consectetur adipisicing.
+            </label>
+          </div>
+        </div>
+
+        <form action="" class="detail_add_form">
+          <button class="detail_btn">+</button>
+          <input type="text"
+            placeholder="add new task detail"
+            class="detail_input"
+          >
+        </form>
       </div>
-  
-      <div class="todo-body">
-          <div class="tasks">
-            <div class="task">
-              <input type="checkbox" 
-              id="task-1"
-              />
-              <label for="task-1">
-                record todo list video
-              </label>
-            </div>
-            <div class="task">
-              <input type="checkbox" 
-              id="task-2"
-              />
-              <label for="task-2">
-                edit todo list video
-              </label>
-            </div>
-            <div class="task">
-              <input type="checkbox" 
-              id="task-3"
-              />
-              <label for="task-3">
-                publish todo list video
-              </label>
-            </div>
-          </div>
-  
-  
-          <div class="new-task-creator">
-              <input type="text"
-              class="new task"
-              placeholder="create a new task"
-              aria-label="create a new task"
-              />
-              <button>+</button>
-          </div>
-  
-          <div class="delete-stuff">
-            <button>Clear completed tasks</button>
-            <button>Delete List</button>
-          </div>
+
+      <div class="detail_delete">
+        <button class="btn">Clear completed tasks</button>
+        <button class="btn">Delete list</button>
       </div>
     </div>
   </main>
 
   <footer>
-    <p></p>
+    <p>Hello</p>
   </footer>
   
 </body>

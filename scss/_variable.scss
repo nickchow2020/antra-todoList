@@ -1,4 +1,8 @@
-$my_favor_color: tomato; 
-$title_color: white;
+$tomato : tomato;
+$black : black;
+$line-through:gray;
+$tomato-complement : complement($tomato);
+$tomato-lighter: lighten($tomato,30%);
 
-$my_favor_color_complement : complement($my_favor_color)
+
+$tomato-lighter-custom: lighten($tomato,15%);

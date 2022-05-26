@@ -1,56 +1,212 @@
 @import "./normalize",
         "./variable";
 
-*,
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+ul li{
+  list-style-type: none;
+  line-height: 1.5;
+}
+
+
 *::after,
 *::before{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
+
+h1{
+  margin: 0;
+  padding: 0;
+}
+
 
 html, body {
   height: 100%;
 }
 
+
 body{
-  background: $my_favor_color_complement;
+  background: $tomato-lighter;
   display: flex;
   flex-direction: column;
 }
 
-header{
-  text-align: center;
-  color: $title_color;
-  font-weight: 900;
-  font-size: 2.3rem;
+.title{
+  opacity: .3;
+}
 
-  h1{
-    padding: 0;
-    margin: 0;
-    letter-spacing: 5px;
-    text-decoration: underline;
+.active{
+  font-weight: bolder;
+  font-size: 1.3rem;
+  color: $tomato;
+}
+
+.complete{
+  text-decoration: line-through;
+  color: $line-through;
+}
+
+.btn{
+  outline: none;
+  background: 0;
+  border: none;
+  font-size: large;
+  font-weight: 900;
+  opacity: .3;
+  cursor: pointer;
+
+  &:hover{
+    color: $tomato;
+    opacity: .8;
   }
 }
 
 
-
-
-
-main{
-  flex: 1 0 auto;
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
 }
 
 
+main{
+  max-width: 1200px;
+  flex: 1 0 auto;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 2rem;
+
+  @media screen and (min-width: 768px){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
+}
+
+
+.task{
+  &_display{
+    max-height: 50vh;
+    overflow-y:auto;
+  }
+
+  &_list{
+    margin-top: .5rem;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    li {
+      list-style-type: circle;
+    }
+  }
+
+  &_add_form{
+    display: flex;
+    justify-content: flex-start;
+  }
+
+
+  &_btn{
+    width: 50px;
+    border: solid 1px white;
+    outline: none;
+    background:0;
+    margin-right: .5rem;
+  }
+
+  &_input{
+    height: 1.5rem;
+    width: 80%;
+    border: none;
+    background: 0;
+    outline: none;
+    border-bottom: solid 1px currentColor;
+
+    &::placeholder{
+      opacity: .3;
+    }
+  }
+}
+
+.detail {
+
+  margin-top: 1.5rem;
+  padding-bottom: 1rem;
+
+
+  &_wrapper{
+    background: white;
+    margin-bottom: .5rem;
+    padding-bottom: 1rem;
+  }
+
+  &_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba($color: #000000, $alpha: .3);
+    height: 2rem;
+    padding: 0 .3rem;
+  }
+
+  &_checkbox{
+    margin-left: 1rem;
+    margin-top: 1rem;
+    line-height: 1.8;
+    max-height: 50vh;
+    overflow-y:auto;
+  }
+
+  &_add_form{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 2rem;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &_btn{
+    width: 50px;
+    border: solid 1px $tomato-lighter;
+    outline: none;
+    background:0;
+    margin-right: .5rem;
+  }
+
+  &_input{
+    height: 1.5rem;
+    width: 80%;
+    border: none;
+    background: 0;
+    outline: none;
+    border-bottom: solid 1px currentColor;
+
+    &::placeholder{
+      opacity: .3;
+    }
+  }
+
+
+  &_delete{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
 
 
 footer{
-  height:2rem;
+  height: 2rem;
   background: white;
-  color:black;
-  flex-shrink: 0;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.3rem;
+  flex-shrink: 0;
 }
