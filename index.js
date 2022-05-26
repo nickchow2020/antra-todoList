@@ -82,45 +82,61 @@ function render(){
 }
 
 function displayDetail(data){
-  const displayTemplate = 
-  `
-      <div class="detail_header">
-        <h3 class="detail_title">${data.title}</h3>
-      </div>
 
-      <div class="detail_checkbox">
-        <div class="detail_list">
-          <label for="detail_list_1" class="complete">
-            <input type="checkbox" id="detail_list_1">
-            Lorem ipsum dolor sit amet consectetur adipisicing.
-          </label>
-        </div>
+  clearElements(detail_display_wrapper)
 
-        <div class="detail_list">
-          <label for="detail_list_2">
-            <input type="checkbox" id="detail_list_2">
-            Lorem ipsum dolor sit amet consectetur adipisicing.
-          </label>
-        </div>
+  const header = document.createElement("div")
+  const title = document.createElement("h3")
+  const status = document.createElement("span")
+  header.classList.add("detail_header")
+  title.classList.add("detail_title")
+  status.classList.add(data.completed ? "complete_status" : "in_complete_status")
+  status.innerText =  data.completed ? "Completed" : "Incomplete";
+  title.innerText = data.title
+  header.appendChild(title)
+  header.appendChild(status)
+  detail_display_wrapper.appendChild(header)
 
-        <div class="detail_list">
-          <label for="detail_list_3">
-            <input type="checkbox" id="detail_list_3">
-            Lorem ipsum dolor sit amet consectetur adipisicing.
-          </label>
-        </div>
-      </div>
 
-    <form action="" class="detail_add_form">
-      <button class="detail_btn">+</button>
-      <input type="text"
-        placeholder="add new task detail"
-        class="detail_input"
-      >
-    </form>
-  `
+  // const displayTemplate = 
+  // `
+  //     <div class="detail_header">
+  //       <h3 class="detail_title">${data.title}</h3>
+  //     </div>
 
-  detail_display_wrapper.innerHTML = displayTemplate
+  //     <div class="detail_checkbox">
+  //       <div class="detail_list">
+  //         <label for="detail_list_1" class="complete">
+  //           <input type="checkbox" id="detail_list_1">
+  //           Lorem ipsum dolor sit amet consectetur adipisicing.
+  //         </label>
+  //       </div>
+
+  //       <div class="detail_list">
+  //         <label for="detail_list_2">
+  //           <input type="checkbox" id="detail_list_2">
+  //           Lorem ipsum dolor sit amet consectetur adipisicing.
+  //         </label>
+  //       </div>
+
+  //       <div class="detail_list">
+  //         <label for="detail_list_3">
+  //           <input type="checkbox" id="detail_list_3">
+  //           Lorem ipsum dolor sit amet consectetur adipisicing.
+  //         </label>
+  //       </div>
+  //     </div>
+
+  //   <form action="" class="detail_add_form">
+  //     <button class="detail_btn">+</button>
+  //     <input type="text"
+  //       placeholder="add new task detail"
+  //       class="detail_input"
+  //     >
+  //   </form>
+  // `
+
+  // detail_display_wrapper.innerHTML = displayTemplate
 }
 
 function renderList(data){

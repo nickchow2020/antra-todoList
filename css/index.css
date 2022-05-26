@@ -394,6 +394,19 @@ body {
   color: gray;
 }
 
+.status {
+  border-top: solid 1px white;
+  font-weight: 900;
+}
+
+.complete_status {
+  color: green;
+}
+
+.in_complete_status {
+  color: gray;
+}
+
 .btn {
   outline: none;
   background: 0;
@@ -456,6 +469,7 @@ main {
 
 .task_list li {
   list-style-type: circle;
+  line-height: 2;
 }
 
 .task_add_form {
@@ -515,12 +529,16 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   background: rgba(0, 0, 0, 0.3);
   min-height: 3.5rem;
   padding: 0 .3rem;
