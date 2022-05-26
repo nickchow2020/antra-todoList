@@ -16,18 +16,19 @@
     <div class="task">
       <h2>My Tasks:</h2>
       <div class="task_display">
-        <ul class="task_list">
+        <ul class="task_list" id="task_list">
           <li class="active">Youtube</li>
           <li>Shopping</li>
           <li>Shopping</li>
           <li>Shopping</li>
         </ul>
       </div>
-      <form action="" class="task_add_form">
+      <form action="" class="task_add_form" data-add-list-form>
         <button class="task_btn">+</button>
         <input type="text"
           placeholder="add new task"
           class="task_input"
+          data-add-list-input
         >
       </form>
     </div>
@@ -73,7 +74,7 @@
 
       <div class="detail_delete">
         <button class="btn">Clear completed tasks</button>
-        <button class="btn">Delete list</button>
+        <button class="btn" data-delete-task>Delete list</button>
       </div>
     </div>
   </main>

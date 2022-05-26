@@ -1,6 +1,7 @@
 $tomato : tomato;
 $black : black;
 $line-through:gray;
+
 $tomato-complement : complement($tomato);
 $tomato-lighter: lighten($tomato,30%);
 
