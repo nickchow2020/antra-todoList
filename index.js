@@ -2,6 +2,8 @@ const display_data_list = document.getElementById("task_list");
 const add_task_form = document.querySelector("[data-add-list-form]");
 const add_task_input = document.querySelector("[data-add-list-input]");
 const delete_task_btn = document.querySelector("[data-delete-task]");
+const detail_display_wrapper = document.querySelector("[data-detail-display]");
+const detail_section = document.querySelector("[data-detail-section]")
 
 const LOCAL_STORAGE_LIST_KEY = "task.list";
 const LOCAL_STORAGE_LIST_ID_KEY = "task.list.id";
@@ -64,6 +66,61 @@ function render(){
   data_API.forEach(data => {
     renderList(data)
   })
+
+
+  const target_data = data_API.find(data => data.id === +selectedListId)
+
+  if(selectedListId){
+    displayDetail(target_data)
+    detail_section.style.display = ""
+  }else{
+    detail_section.style.display = "none"
+  }
+
+  console.log(target_data)
+  
+}
+
+function displayDetail(data){
+  const displayTemplate = 
+  `
+      <div class="detail_header">
+        <h3 class="detail_title">${data.title}</h3>
+      </div>
+
+      <div class="detail_checkbox">
+        <div class="detail_list">
+          <label for="detail_list_1" class="complete">
+            <input type="checkbox" id="detail_list_1">
+            Lorem ipsum dolor sit amet consectetur adipisicing.
+          </label>
+        </div>
+
+        <div class="detail_list">
+          <label for="detail_list_2">
+            <input type="checkbox" id="detail_list_2">
+            Lorem ipsum dolor sit amet consectetur adipisicing.
+          </label>
+        </div>
+
+        <div class="detail_list">
+          <label for="detail_list_3">
+            <input type="checkbox" id="detail_list_3">
+            Lorem ipsum dolor sit amet consectetur adipisicing.
+          </label>
+        </div>
+      </div>
+
+    <form action="" class="detail_add_form">
+      <button class="detail_btn">+</button>
+      <input type="text"
+        placeholder="add new task detail"
+        class="detail_input"
+      >
+    </form>
+  `
+
+  detail_display_wrapper.innerHTML = displayTemplate
 }
 
 function renderList(data){
